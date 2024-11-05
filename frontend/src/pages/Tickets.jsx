@@ -94,9 +94,7 @@ function Tickets() {
         </div>
       </div>
 
-      {isLoading && page === 1 ? (
-        <p>Loading tickets...</p>
-      ) : displayedTickets.length > 0 ? (
+      {!isLoading && displayedTickets?.length > 0 ? (
         <>
           <Table data={displayedTickets} columnHeaders={columnHeaders} />
           <Pagination
@@ -108,7 +106,7 @@ function Tickets() {
           />
         </>
       ) : (
-        <p>No tickets to display.</p>
+        <p>Loading...</p>
       )}
       {error && <p className="error">Error: {error}</p>}
     </div>

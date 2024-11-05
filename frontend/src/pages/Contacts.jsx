@@ -106,9 +106,7 @@ function Contacts() {
         </Button>
       </div>
 
-      {isLoading && page === 1 ? (
-        <p>Loading contacts...</p>
-      ) : displayedContacts.length > 0 ? (
+      {!isLoading && displayedContacts.length > 0 ? (
         <>
           <Table data={displayedContacts} columnHeaders={columnHeaders} />
           <Pagination
@@ -120,7 +118,7 @@ function Contacts() {
           />
         </>
       ) : (
-        <p>No contacts to display.</p>
+        <p>Loading...</p>
       )}
       {error && <p className="error">Error: {error}</p>}
     </div>

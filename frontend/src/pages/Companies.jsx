@@ -91,9 +91,7 @@ function Companies() {
         </div>
       </div>
 
-      {isLoading && page === 1 ? (
-        <p>Loading companies...</p>
-      ) : displayedCompanies.length > 0 ? (
+      {!isLoading && displayedCompanies.length > 0 ? (
         <>
           <Table data={displayedCompanies} columnHeaders={columnHeaders} />
           <Pagination
@@ -105,7 +103,7 @@ function Companies() {
           />
         </>
       ) : (
-        <p>No companies to display.</p>
+        <p>Loading...</p>
       )}
       {error && <p className="error">Error: {error}</p>}
     </div>
