@@ -7,7 +7,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 
-// Lazy load other pages
 const Contacts = lazy(() => import("./pages/Contacts"));
 const ContactsNew = lazy(() => import("./pages/ContactsNew"));
 const Companies = lazy(() => import("./pages/Companies"));
