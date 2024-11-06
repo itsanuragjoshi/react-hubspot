@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getContacts(req, res) {
   try {
-    const limit = 100;
+    const limit = 500;
     const nextAfter = req.query.after || null;
 
     const response = await axios.get(process.env.HUBSPOT_API_CONTACTS, {
